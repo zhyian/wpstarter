@@ -93,7 +93,8 @@ class MuPluginList
             ->depth(0)
             ->directories()
             ->ignoreUnreadableDirs()
-            ->ignoreVCS(true);
+            ->ignoreVCS(true)
+            ->sortByName();
 
         foreach ($muPluginsSubDirs as $muSubDir) {
             $muDirPath = $this->filesystem->normalizePath($muSubDir->getPathname());
@@ -154,7 +155,8 @@ class MuPluginList
             ->ignoreUnreadableDirs()
             ->ignoreVCS(true)
             ->ignoreDotFiles(true)
-            ->files();
+            ->files()
+            ->sortByName();
         $count = $files->count();
         if ($count === 0) {
             return [];
