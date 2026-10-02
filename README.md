@@ -24,6 +24,7 @@ WP Starter is the easiest and fastest way to bootstrap WordPress sites entirely 
 |        2.6         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
 |        2.7         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
 |        2.8         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
+|        2.9         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
 
 This table shows what versions the package is tested for (in CI, not necessarily in real world).
 It _might_ work with other combinations. The combinations explicitly marked as non-supported are
