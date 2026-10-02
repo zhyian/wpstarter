@@ -16,16 +16,16 @@ WP Starter is the easiest and fastest way to bootstrap WordPress sites entirely 
 
 ### Composer - PHP Support Table
 
-| Composer ↓ / PHP → | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4 |
-|:------------------:|:---:|:---:|:---:|:---:|:---:|:---:|
-|        2.3         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  -  |
-|        2.4         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
-|        2.5         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
-|        2.6         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
-|        2.7         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
-|        2.8         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
-|        2.9         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
-|        2.10        |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
+| Composer ↓ / PHP → | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4 | 8.5 |
+|:------------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|        2.3         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  -  |  -  |
+|        2.4         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  -  |
+|        2.5         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  -  |
+|        2.6         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
+|        2.7         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
+|        2.8         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
+|        2.9         |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
+|        2.10        |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |  ✔  |
 
 This table shows what versions the package is tested for (in CI, not necessarily in real world).
 It _might_ work with other combinations. The combinations explicitly marked as non-supported are

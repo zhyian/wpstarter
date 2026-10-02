@@ -107,9 +107,9 @@ final class Steps implements PostProcessStep, \Countable
     public function addStep(Step $step, Step ...$steps): Steps
     {
         if (!$this->running || ($this->runningScripts === 'pre')) {
-            $this->steps->attach($step);
+            $this->steps->offsetSet($step);
             foreach ($steps as $aStep) {
-                $this->steps->attach($aStep);
+                $this->steps->offsetSet($aStep);
             }
         }
 
@@ -124,8 +124,10 @@ final class Steps implements PostProcessStep, \Countable
     public function removeStep(Step $step, Step ...$steps): Steps
     {
         if (!$this->running || $this->runningScripts === 'pre') {
-            $this->steps->detach($step);
-            array_walk($steps, [$this->steps, 'detach']);
+            $this->steps->offsetUnset($step);
+            foreach ($steps as $aStep) {
+                $this->steps->offsetUnset($aStep);
+            }
         }
 
         return $this;
@@ -264,7 +266,7 @@ final class Steps implements PostProcessStep, \Countable
                 $storage = new \SplObjectStorage();
                 $this->postProcessSteps = $storage;
             }
-            $this->postProcessSteps->attach($step);
+            $this->postProcessSteps->offsetSet($step);
         }
 
         if (!$this->shouldProcess($step, $paths, $config)) {
