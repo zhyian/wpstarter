@@ -90,7 +90,7 @@ final class WpStarterCommand extends BaseCommand
             $skip = $this->hasNonEmptyOption($input, 'skip');
             $skipCustom = $this->hasNonEmptyOption($input, 'skip-custom');
             $ignoreSkipConfig = $this->hasNonEmptyOption($input, 'ignore-skip-config');
-            $list = $this->hasNonEmptyOption($input, 'steps-help');
+            $list = $this->hasNonEmptyOption($input, 'list-steps');
 
             $flags = $list ? SelectedStepsFactory::MODE_LIST : SelectedStepsFactory::MODE_COMMAND;
             $skip and $flags |= SelectedStepsFactory::MODE_OPT_OUT;

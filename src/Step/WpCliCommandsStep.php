@@ -146,10 +146,10 @@ final class WpCliCommandsStep implements ConditionalStep
         global $locator;
         $locator = $this->locator;
         /** @var list<string> $commands */
-        $commands = $config[Config::WP_CLI_COMMANDS]->unwrap();
+        $commands = $config[Config::WP_CLI_COMMANDS]->unwrapOrFallback([]);
         unset($GLOBALS['locator']);
         /** @var list<Cli\WpCliFileData> $files */
-        $files = $config[Config::WP_CLI_FILES]->unwrap();
+        $files = $config[Config::WP_CLI_FILES]->unwrapOrFallback([]);
 
         return [$commands, $files];
     }

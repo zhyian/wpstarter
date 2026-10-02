@@ -93,7 +93,7 @@ final class DropinsStep implements ConditionalStep
         $configuredDropins = $config[Config::DROPINS]->unwrapOrFallback([]);
         $packageDropins = $this->packageFinder->findByType('wordpress-dropin');
 
-        $found = $configuredDropins !== null || $packageDropins !== [];
+        $found = $configuredDropins !== [] || $packageDropins !== [];
 
         if (!$found) {
             $this->reason = 'no dropins found';
