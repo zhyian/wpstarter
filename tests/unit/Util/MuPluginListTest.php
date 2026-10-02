@@ -66,4 +66,28 @@ class MuPluginListTest extends TestCase
 
         static::assertSame($expected, $muPluginsList->pluginsList($config));
     }
+
+    /**
+     * @test
+     */
+    public function testPluginListWithoutMuPluginsDir(): void
+    {
+        $finder = \Mockery::mock(PackageFinder::class);
+        $finder
+            ->expects('findByType')
+            ->once()
+            ->with('wordpress-muplugin')
+            ->andReturn([]);
+
+        $paths = $this->factoryPaths(
+            [
+                'wordpress-install-dir' => 'public/wp',
+                'wordpress-content-dir' => 'public',
+            ]
+        );
+
+        $muPluginsList = new MuPluginList($finder, $paths, new ComposerFilesystem());
+
+        static::assertSame([], $muPluginsList->pluginsList($this->factoryConfig()));
+    }
 }
