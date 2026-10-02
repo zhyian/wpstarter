@@ -32,7 +32,7 @@ jobs:
             fail-fast: false
             matrix:
                 php-ver: [ '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5' ]
-                composer-ver: [ '~2.9.0' ]
+                composer-ver: [ '~2.7.0', '~2.8.0', '~2.9.0', '~2.10.0' ]
 
         steps:
             -   name: Update "USE_COVERAGE" env var based on matrix
@@ -51,6 +51,7 @@ jobs:
 
             -   name: Adjust Composer dependencies
                 run:  |
+                    composer config audit.block-insecure false
                     composer remove --dev --no-update "roave/security-advisories"
                     composer remove --dev --no-update "inpsyde/php-coding-standards"
                     composer remove --dev --no-update "phpstan/phpstan"
@@ -61,6 +62,9 @@ jobs:
                 uses: ramsey/composer-install@v3
 
             -   name: Run tests
+                env:
+                    COMPOSER_AUTH: ''
+                    COMPOSER_HOME: ${{ runner.temp }}/composer-home-tests
                 run: ./vendor/bin/phpunit ${{ ((env.USE_COVERAGE == 'yes') && '--coverage-html=coverage-report') || '--no-coverage' }}
 
             -   name: Upload coverage report
